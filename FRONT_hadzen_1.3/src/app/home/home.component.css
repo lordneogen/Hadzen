@@ -1,0 +1,27 @@
+#channels {
+  padding: 20px;
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#posts {
+  width: 70%;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+}
+

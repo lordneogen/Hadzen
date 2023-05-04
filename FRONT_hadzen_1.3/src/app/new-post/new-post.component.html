@@ -1,0 +1,46 @@
+<div style="display: flex">
+<div id="newPost">
+  <div *ngIf="url.indexOf('new') !== -1">
+  <h1>Новый блог:</h1>
+  <form id="blog-form">
+    <label for="blog-name">Название блога:</label>
+    <input [(ngModel)]="name" placeholder="Название" type="text" style="border: white" id="blog-name" name="blog-name" required>
+
+    <label for="blog-text">Текст блога:</label>
+    <textarea [(ngModel)]="text_in" placeholder="Текст"  id="blog-text"  style="border: white" name="blog-text" required></textarea>
+
+    <label for="blog-image">Изображение блога:</label>
+    <input [(ngModel)]="img" type="text" placeholder="URL блога"   style="border: white;width: 32em" id="blog-image" name="blog-image">
+
+    <label for="blog-image">Канал:</label>
+    <input [(ngModel)]="ch" type="text" placeholder="Канал"   style="border: white" list="ch" id="blog-name" name="blog-name" required>
+    <datalist id="ch">
+      <option  *ngFor="let ch of chanells" value="@{{ch.id}}-{{ch.name}}">
+    </datalist>
+    <img src="{{img}}" class="img1">
+    <button (click)="sendData()"  style="margin-top: 2em" class="sub" type="submit">Добавить блог</button>
+  </form>
+  </div>
+  <div *ngIf="url.indexOf('update') !== -1">
+    <h1>Редактировать блог:</h1>
+    <form id="blog-form">
+      <label for="blog-name">Название блога:</label>
+      <input [(ngModel)]="name" placeholder="Название" type="text" style="border: white" id="blog-name" name="blog-name" required>
+
+      <label for="blog-text">Текст блога:</label>
+      <textarea [(ngModel)]="text_in" placeholder="Текст"  id="blog-text"  style="border: white" name="blog-text" required></textarea>
+
+      <label for="blog-image">Изображение блога:</label>
+      <input [(ngModel)]="img" type="text" placeholder="URL блога"   style="border: white;width: 32em" id="blog-image" name="blog-image">
+
+<!--      <label for="blog-image">Канал:</label>-->
+<!--      <input [(ngModel)]="ch" type="text" placeholder="Канал"   style="border: white" list="ch" id="blog-name" name="blog-name" required>-->
+<!--      <datalist id="ch1">-->
+<!--        <option  *ngFor="let ch1 of chanells" value="@{{ch1.id}}-{{ch1.name}}">-->
+<!--      </datalist>-->
+      <img src="{{img}}" class="img1">
+      <button (click)="updatebl()"  style="margin-top: 2em" class="sub" type="submit">Изменить блог</button>
+    </form>
+  </div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="hero">
+  <div class="form-box">
+    <div class="button-box">
+      <div class="btn" id="btnL" *ngIf="showLogin"></div>
+      <div class="btn" id="btnR" *ngIf="showRegister"></div>
+      <button type="button" class="toggle-btn" (click)="showLogin=true; showRegister=false">Войти</button>
+      <button type="button" class="toggle-btn" (click)="showRegister=true; showLogin=false">Регистрация</button>
+    </div>
+    <div class="social-icons">
+      <img src="/assets/facebook.png">
+      <img src="/assets/instagram.png">
+      <img src="/assets/whatsapp%20(1).png">
+    </div>
+
+    <div class="login-style" *ngIf="showLogin">
+      <form id="login" class="input-group">
+        <input type="text" class="input-field" placeholder="Имя пользователя" required>
+        <input type="text" class="input-field" placeholder="Пароль" required>
+        <input type="checkbox" class="check-box"> <span>Запомнить пароль</span>
+        <button type="submit" class="submit-btn" id="subL">Войти</button>
+      </form>
+    </div>
+
+    <div class="register-style" *ngIf="showRegister">
+      <div id="register" class="input-group">
+        <input [(ngModel)]="username" type="text" class="input-field" placeholder="Имя пользователя" required>
+        <input [(ngModel)]="email" type="email" class="input-field" placeholder="Почта" required>
+        <input [(ngModel)]="password" type="text" class="input-field" placeholder="Пароль" required>
+        <input [(ngModel)]="password2" type="text" class="input-field" placeholder="Повтарите пароль" required>
+        <input type="checkbox" class="check-box"> <span>Я согласен с правилами и условиями</span>
+        <button (click)="putUser()" type="submit" class="submit-btn" id="subR">Зарегистрироваться</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,172 @@
+.navbar{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px;
+
+
+  background-color: white;
+
+  border: 2px outset #FF5F13;
+  border-radius: 23px;
+
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(255, 162, 0, 0.13);
+  -moz-box-shadow: 0px 0px 15px 1px rgba(255, 162, 0, 0.13);
+  box-shadow: 0px 0px 15px 1px rgba(255, 162, 0, 0.13);
+}
+.navbar a{
+  text-decoration: none;
+  color: inherit;
+}
+.navbar label{
+  display: none;
+}
+
+.list{
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-right: 50px;
+}
+
+li{
+  display: inline-block;
+  position: relative;
+  color: orange;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: sans-serif;
+  transition: 0.4s all ease;
+  margin: 10px;
+}
+li:hover{
+  color: #ff1d00;
+  transition: 0.4s all ease;
+  margin-top: 5px;
+}
+li:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ff1d00;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+li:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+@media screen and
+(max-width: 400px){
+  .menu{
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .list{
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .navbar label{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+}
+
+#logo{
+  margin-right: 20px;
+}
+.text-logo{
+
+  margin-left: 20px;
+  text-transform: uppercase;
+  color: chocolate;
+  display: inline-block;
+  font-size: 23px;
+  font-family: "MyCustomFont", sans-serif;
+}
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/assets/ofont.ru_Azov.ttf');
+}
+
+
+
+.login-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+  background-color: #ec6a00;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #0052cc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: #0047b3;
+}
+
+
+
+.search-container {
+  display: inline-block;
+  position: relative;
+
+  -webkit-box-shadow: 0px 5px 14px -4px rgba(34, 60, 80, 0.21);
+  -moz-box-shadow: 0px 5px 14px -4px rgba(34, 60, 80, 0.21);
+  box-shadow: 0px 5px 14px -4px rgba(34, 60, 80, 0.21);
+  border-radius: 16px;
+
+}
+
+input[type="text"] {
+  width: 200px;
+  height: 32px;
+  border-radius: 16px;
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  transition: width 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 300px;
+}
+
+input[type="text"]:focus:before {
+  content: "";
+  display: inline-block;
+  width: 32px; /* размер иконки */
+  height: 32px;
+  transition: width 0.3s ease-in-out;
+}
+
+input[type="text"]:focus:before {
+  width: 0; /* изменение размера пустого места */
+}
+
+
+

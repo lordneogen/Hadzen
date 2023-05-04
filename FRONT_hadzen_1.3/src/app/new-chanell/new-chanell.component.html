@@ -1,0 +1,32 @@
+<div id="newPost">
+  <div *ngIf="url.indexOf('new') !== -1">
+  <h1>Новый канал:</h1>
+  <form id="blog-form">
+    <label for="blog-name">Название канала:</label>
+    <input type="text" placeholder="Название"   style="border: white" id="blog-name" name="blog-name" required [(ngModel)]="name">
+
+    <label for="blog-text">Описание канала:</label>
+    <textarea id="blog-text" placeholder="Описание"    style="border: white" name="blog-text" required [(ngModel)]="title"></textarea>
+
+    <label for="blog-image">Аватарка канала:</label>
+    <input type="text"  placeholder="URL адрес"  style="border: white"  id="blog-image" name="blog-image" [(ngModel)]="img">
+    <img src="{{img}}" class="img1">
+    <button style="margin-top: 2em" type="submit"  (click)="sendData()">Создать канал</button>
+  </form>
+  </div>
+  <div *ngIf="url.indexOf('update') !== -1">
+    <h1>Редактировать канал:</h1>
+    <form id="blog-form">
+      <label for="blog-name">Название канала:</label>
+      <input type="text" placeholder="Название"   style="border: white" id="blog-name" name="blog-name" required [(ngModel)]="name">
+
+      <label for="blog-text">Описание канала:</label>
+      <textarea id="blog-text" placeholder="Описание"    style="border: white" name="blog-text" required [(ngModel)]="title"></textarea>
+
+      <label for="blog-image">Аватарка канала:</label>
+      <input type="text"  placeholder="URL адрес"  style="border: white"  id="blog-image" name="blog-image" [(ngModel)]="img">
+      <img src="{{img}}" class="img1">
+      <button style="margin-top: 2em" type="submit"  (click)="updatech()">Сохранить канал</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+body{
+  background-color: #ededed;
+  font-family: sans-serif;
+}
+a {
+  color: inherit; /* сохраняем цвет ссылки */
+  text-decoration: inherit; /* сохраняем стиль подчеркивания ссылки */
+}

@@ -1,0 +1,86 @@
+<!--channel:string;-->
+<!--img:string;-->
+<!--subs:number;-->
+<!--blog_detail:Blog_back_CUD;-->
+<!--like_count:number;-->
+<!--dis_count:number;-->
+<!--share_count:number;-->
+<!--comments:Comm_min_R[];-->
+<div id="channels">
+  <h1 style="font-size: 25px">Рекомендованные блоги канала</h1>
+  <a href="#channels" class="scroll-to-top"><img src="assets/up.png" width="20px" height="20px"></a>
+  <div>
+    <div class="post-container" *ngFor="let blog_min of blogs">
+      <div class="post-content">
+        <a routerLink="/posts/{{blog.blog_detail.id}}">
+          <h1 class="post-title">{{ blog.blog_detail.name }}</h1>
+          <img class="inner-img-short" src="{{blog.blog_detail.img}}">
+        </a>
+        <div class="post-info">
+          <p>
+            {{blog_min.blog_detail.text_in.slice(0,100)}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="posts">
+  <div class="post-container">
+    <div class="del">
+      <button (click)="BlogUpd()" class="button-del">
+      <img  class="del-icon" style="margin-top: -2px;" src="https://w7.pngwing.com/pngs/597/664/png-transparent-computer-icons-ios-7-update-button-miscellaneous-text-desktop-wallpaper.png">
+      </button>
+        <button (click)="BlogDel()" class="button-del">
+      <img class="del-icon" src="https://cdn-icons-png.flaticon.com/512/17/17047.png">
+      </button>
+    </div>
+    <div class="post-content" *ngIf="blog!=undefined">
+      <h1 class="post-title">{{ blog.blog_detail.name }}</h1>
+      <img class="inner-img" src="{{blog.blog_detail.img}}"  style="height: 300px;width: auto">
+      <div class="post-info">
+        <div style="display: flex;
+                    justify-content: space-between;
+  align-items: center;">
+          <div>
+            <p><img src="{{blog.img}}" style="height: 40px;width: 40px;border-radius: 50%;cursor: pointer; opacity: 0.8"> {{ blog.chanell }}</p>
+            <p style="font-size: 12px">Кол-во подписчиков: {{blog.subs}}</p>
+          </div>
+          <button class="subscribe-button">Подписаться</button>
+        </div>
+        <p>
+          {{blog.blog_detail.text_in}}
+        </p>
+        <div style="display: flex;gap: 20px">
+          <p (click)="sendLDS(blog.blog_detail.id,1)" style="cursor: pointer; opacity: 0.8"><img class="lds" src="assets/like.jpg">  {{ blog.like_count }}</p>
+          <p (click)="sendLDS(blog.blog_detail.id,2)" style="cursor: pointer; opacity: 0.8"><img class="lds" src="assets/dislike.jpg">  {{ blog.dis_count }}</p>
+          <p (click)="sendLDS(blog.blog_detail.id,3)" style="cursor: pointer; opacity: 0.8"><img class="lds" src="assets/share.jpg">  {{ blog.share_count }}</p>
+        </div>
+        <p>
+          {{blog.blog_detail.date|date}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let cm of blog.comments">
+    <div class="comment">
+      <p class="comment-author">{{cm.user}}</p>
+      <p class="comment-text">{{cm.text}}</p>
+<!--      <div style="display: flex;gap: 20px">-->
+<!--        <p style="cursor: pointer; opacity: 0.8"><img class="lds" src="assets/like.jpg">  {{ cm.like }}</p>-->
+<!--        <p style="cursor: pointer; opacity: 0.8"><img class="lds" src="assets/dislike.jpg">  {{ cm.dis }}</p></div>-->
+<!--    </div>-->
+  </div>
+  </div>
+  <div>
+    <form class="comment-form">
+
+      <label for="comment-text">Ваш комментарий:</label>
+      <textarea [(ngModel)]="text" id="comment-text" name="comment-text" required></textarea>
+
+      <input (click)="sendComm()" type="submit" value="Добавить комментарий">
+    </form>
+  </div>
+</div>
+

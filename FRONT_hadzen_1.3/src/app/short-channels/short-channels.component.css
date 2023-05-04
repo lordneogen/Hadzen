@@ -1,0 +1,22 @@
+.container {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid orangered;
+  margin-right: 20px; /* для создания промежутка между изображением и текстом */
+}
+
+.text {
+  text-align: center;
+}
+.text:hover {
+
+  color:darkblue;
+}

@@ -1,0 +1,106 @@
+<!--channel:string;-->
+<!--img:string;-->
+<!--subs:number;-->
+<!--blog_detail:Blog_back_CUD;-->
+<!--like_count:number;-->
+<!--dis_count:number;-->
+<!--share_count:number;-->
+<!--comments:Comm_min_R[];-->
+<div id="channels">
+  <div>
+    <img class="logo-img" src="{{chanell.img}}">
+<!--    <div class="button-container">-->
+<!--      <button class="plus-button">+</button>-->
+<!--      <button class="minus-button">-</button>-->
+<!--    </div>-->
+  </div>
+  <h2>Название канала:</h2>
+  <h3>{{chanell.name}}</h3>
+  <h4>Описание:</h4>
+  <p>{{chanell.title}}</p>
+  <p>------</p>
+  <h6>@{{chanell.id}}-{{chanell.name}}</h6>
+  <div style="display: flex;
+                    justify-content: space-between;
+  align-items: center;">
+    <button class="subscribe-button">Подписаться</button>
+    <button (click)="mang()" class="subscribe-button hov" style="background-color:cornflowerblue;color: white; ">Модераторы</button>
+  </div>
+  <div style="display: flex;
+                    justify-content: space-between;
+  align-items: center;margin-top: 1em;">
+    <button class="subscribe-button hov" (click)="ChDel()" style="background-color:firebrick;color: white ">Удалить</button>
+
+    <button class="subscribe-button hov" (click)="upd()" style="background-color:rebeccapurple;color: white; ">Редактировать</button>
+  </div>
+<div *ngIf="man">
+  <div style="margin-top: 5em" *ngFor="let man of managers">
+    <div class="permissions">
+      <div class="create-field permission-block">
+        <span>Создавать блоги:{{ man.create_field }}</span>
+      </div>
+      <div class="update-field permission-block">
+        <span>Редактировать блоги:{{ man.update_field }}</span>
+      </div>
+      <div class="delete-comm permission-block">
+        <span>Удалять коментарии:{{ man.delete_comm }}</span>
+      </div>
+      <div class="red-ch permission-block">
+        <span>Редактировать канал:{{ man.red_ch }}</span>
+      </div>
+      <div class="email permission-block">
+        <span>Email:{{ man.email }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="posts">
+
+  <div class="post-container" *ngFor="let blog of blogs">
+    <div class="post-content">
+      <a routerLink="/posts/{{blog.blog_detail.id}}">
+        <h1 class="post-title">{{ blog.blog_detail.name }}</h1>
+        <img class="inner-img" src="{{blog.blog_detail.img}}">
+      </a>
+      <div class="post-info">
+        <p>
+          {{blog.blog_detail.text_in}}
+        </p>
+        <div style="display: flex;gap: 20px">
+          <p (click)="sendLDS(blog.blog_detail.id,1)" style="cursor: pointer; opacity: 0.8"><img class="lds" src="assets/like.jpg">  {{ blog.like_count }}</p>
+          <p (click)="sendLDS(blog.blog_detail.id,2)" style="cursor: pointer; opacity: 0.8"><img class="lds" src="assets/dislike.jpg">  {{ blog.dis_count }}</p>
+          <p (click)="sendLDS(blog.blog_detail.id,3)" style="cursor: pointer; opacity: 0.8"><img class="lds" src="assets/share.jpg">  {{ blog.share_count }}</p>
+        </div>
+        <p>
+          {{blog.blog_detail.date|date}}
+        </p>
+        <!--      <p>Date: {{ blog. | date }}</p>-->
+      </div>
+      <!--    <p class="post-text">{{ blog.content }}</p>-->
+      <!--    <div class="post-image-container">-->
+      <!--      <img class="post-image" [src]="blog.img" alt="{{ blog.title }}">-->
+      <!--    </div>-->
+      <!--  </div>-->
+
+      <!--  <div class="comment-container" *ngFor="let comment of blog.comments">-->
+      <!--    <div class="comment-content">-->
+      <!--      <p>{{ comment.user }} says: {{ comment.text }}</p>-->
+      <!--      <div class="comment-info">-->
+      <!--        <p class="comment-likes">{{ comment.like }} likes</p>-->
+      <!--        <p class="comment-dislikes">{{ comment.dis }} dislikes</p>-->
+      <!--        <p>Date: {{ comment.date | date }}</p>-->
+      <!--      </div>-->
+      <!--    </div>-->
+      <!--  </div>-->
+    </div>
+  </div>
+  <div *ngIf="blogs.length==0" style="margin-top: 4em">
+    <h1>
+      Пока блогов нет...
+    </h1>
+  </div>
+</div>
+
+

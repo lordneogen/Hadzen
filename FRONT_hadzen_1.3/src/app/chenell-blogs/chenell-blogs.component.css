@@ -1,0 +1,319 @@
+/* стили для контейнера поста */
+.post-container {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* изменено на вертикальное расположение */
+}
+
+/* стили для контента поста */
+.post-content {
+  flex: 1;
+
+}
+
+/* стили для заголовка поста */
+.post-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* стили для текста поста */
+.post-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* стили для изображения поста */
+.post-image-container {
+  max-width: 50%;
+  height: auto;
+  margin-top: 20px; /* изменено на верхний отступ */
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* стили для информации о посте */
+.post-info {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* стили для контейнера комментария */
+.comment-container {
+  margin-top: 20px; /* изменено на верхний отступ */
+}
+
+/* стили для контента комментария */
+.comment-content {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+/* стили для информации о комментарии */
+.comment-info {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* стили для кнопок лайков и дизлайков */
+.comment-likes {
+  margin-right: 10px;
+}
+
+.comment-dislikes {
+  margin-right: 10px;
+  color: red;
+}
+.inner-img {
+  margin-top: 1em;
+  width: 40%;
+  box-shadow: 5px 5px 5px #888888;
+  height: 400px;
+  width: auto;
+}
+.inner-img:hover{
+  filter: brightness(1.2);
+}
+.lds {
+  height: 1em;
+  width: 1em;
+
+}
+.subscribe-button {
+  background-color: orange;
+  color: #000000;
+  border: none;
+  height: 3em;
+  width: 9em;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.8;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.subscribe-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+#channels {
+  padding: 20px;
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#posts {
+  width: 70%;
+  margin-right: 50px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+}
+
+.inner-img-short{
+  margin-top: 1em;
+  width: 100%;
+  box-shadow: 5px 5px 5px #888888;
+}
+.blog-comments {
+  margin-top: 50px;
+}
+
+.comment {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  margin: 0;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.comment-form label,
+.comment-form textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  min-height: 100px;
+}
+
+.comment-form input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-form input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+.comment-form {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.comment-form label,
+.comment-form textarea,
+.comment-form input[type="text"] {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.comment-form textarea {
+  height: 150px;
+}
+
+.comment-form input[type="submit"] {
+  background-color: orange;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-form input[type="submit"]:hover {
+  background-color: orangered;
+}
+.logo-img{
+  margin-top: 2em;
+  margin-right: 2em;
+  border: 2px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  width: 14em;
+  max-height: 14em;
+  height: 12em;
+  border-radius: 10%;
+}
+.button-container {
+  display: flex;
+}
+
+.button-container {
+  width: 100%;
+  margin-top: 1em;
+}
+
+.plus-button, .minus-button {
+  background-color: #FF5722;
+  color: white;
+  border: none;
+  width: 30%;
+  height: 36px;
+  font-size: 18px;
+  margin: 0 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.plus-button:hover, .minus-button:hover {
+  background-color: #FF8A65;
+}
+
+.hov {
+  opacity: 0.3;
+}
+
+.hov:hover {
+  opacity: 0.9;
+}
+
+.permissions {
+  transition: opacity 0.5s;
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #a1a1a1;
+  opacity: 0.5;
+  background-color: #131313;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  height: auto;
+}
+.permissions:hover{
+  opacity: 1;
+}
+.permission-block {
+  display: flex;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+.permission-block span:first-child {
+  margin-right: 1.5rem;
+  font-weight: 700;
+}
+
+.permission-block .value {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.create-field {
+  color: #57c778;
+}
+
+.update-field {
+  color: #4b9ce2;
+}
+
+.delete-comm {
+  color: #ed4a4a;
+}
+
+.red-ch {
+  color: #a23edb;
+}
+
+.email {
+  color: #fbb450;
+}

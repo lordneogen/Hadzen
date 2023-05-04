@@ -1,0 +1,6 @@
+<div *ngFor="let ch of chs">
+  <div class="container">
+    <img src="{{ch.img}}" alt="Image" class="image">
+    <div class="text"><a routerLink="/chanell/{{ch.id}}">{{ch.name}}</a></div>
+  </div>
+</div>

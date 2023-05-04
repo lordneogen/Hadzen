@@ -1,0 +1,25 @@
+<div style="display: flex">
+  <div id="newPost" class="manger">
+    <h1>Создать | Редактировать менеджера:</h1>
+    <form id="blog-form">
+      <label for="blog-name">Редактирование канала:</label>
+      <h2>Имя:</h2>
+      <input type="text" style="border: white" id="blog-name" name="blog-name" required>
+      <label for="blog-image">Канал:</label>
+      <input  type="text"  style="border: white" list="ch" id="blog-name" name="blog-name" required>
+      <datalist id="ch">
+        <option  *ngFor="let ch of chanells" value="@{{ch.id}}-{{ch.name}}">
+      </datalist>
+      <label>Роль:</label>
+      <h4>Создавать блоги</h4>
+      <input [(ngModel)]="create_field" type="radio">
+      <h4>Удалять блоги</h4>
+      <input [(ngModel)]="update_field" type="radio">
+      <h4>Удаление коментариев</h4>
+      <input [(ngModel)]="delete_comm" type="radio">
+      <h4>Редактирование канала</h4>
+      <input [(ngModel)]="red_ch" type="radio">
+      <button (click)="putMang()" class="sub" style="margin-top: 5em" type="submit">Добавить менеджера</button>
+    </form>
+  </div>
+</div>
